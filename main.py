@@ -4,6 +4,7 @@ from tkinter import ttk
 
 from clases import BaseDatos
 from vistas.FormularioPaciente import FormularioPaciente
+from vistas.ProgramacionCitas import ProgramacionCitas
 
 
 def main():
@@ -14,6 +15,7 @@ def main():
     pestanas = ttk.Notebook(ventana)
     pestanas.pack(fill="both", expand=True)
     pestanas.add(FormularioPaciente(pestanas), text="Pacientes")
+    pestanas.add(ProgramacionCitas(pestanas), text="Citas")
     ventana.mainloop()
 
 

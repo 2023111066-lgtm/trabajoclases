@@ -26,5 +26,18 @@ def crear_tablas():
         )
         """
     )
+    con.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cita (
+            id_cita INTEGER PRIMARY KEY AUTOINCREMENT,
+            dni TEXT NOT NULL,
+            fecha TEXT NOT NULL,
+            hora TEXT NOT NULL,
+            motivo TEXT NOT NULL,
+            estado TEXT NOT NULL DEFAULT 'Programada',
+            FOREIGN KEY (dni) REFERENCES paciente (dni)
+        )
+        """
+    )
     con.commit()
     con.close()
